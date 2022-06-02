@@ -1,4 +1,5 @@
 ﻿using System;
+using SApr.models;
 
 namespace SApr
 {
@@ -6,7 +7,15 @@ namespace SApr
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Graph g = new();
+            g.AddVertex(6);
+            g.AddVertex(5);
+            g.AddVertex(5);
+            Console.WriteLine(g.Vertexs[0].Number);
+            Console.WriteLine(g.Vertexs[1].Number);
+            Console.WriteLine(g.Vertexs[2].Number);
+            g.AddEdge(g.Vertexs[0], g.Vertexs[0], 8);
+            g.WriteVertex();
         }
     }
 }
