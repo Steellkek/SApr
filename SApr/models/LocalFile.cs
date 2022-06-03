@@ -4,15 +4,17 @@ namespace SApr.models;
 
 public class LocalFile
 {
-    private string Way="Граф.txt";
+    private string WayGraph="Граф.txt";
+    private string WaySplit="разбиение.txt";
 
     public List<List<int>> ReadGraph()
     {
         List<List<int>> matrix;
-        int L;
+
         try
         {
-            using (StreamReader lf = new StreamReader(Way))
+            int L;
+            using (StreamReader lf = new StreamReader(WayGraph))
             {
                 L = Int32.Parse(lf.ReadLine());
                 matrix = lf
@@ -28,10 +30,27 @@ public class LocalFile
             Console.WriteLine("привет");
             throw;
         }
-
         
         return matrix;
     }
 
-    
+    public List<int> ReadSplit()
+    {
+        List<int> split;
+
+        using (StreamReader lf = new StreamReader(WaySplit))
+        {
+            split = lf
+                .ReadToEnd()
+                .Split(Array.Empty<string>(), StringSplitOptions.RemoveEmptyEntries)
+                .Select(x => int.Parse(x))
+                .ToList();
+        }
+
+        foreach (var VARIABLE in split)
+        {
+            Console.WriteLine(VARIABLE);
+        }
+        return split;
+    }
 }

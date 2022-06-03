@@ -11,11 +11,25 @@ public class Graph
         Vertexs.Add(new Vertex(number));
     }
 
+
     public void AddEdge(Vertex v1, Vertex v2, int weight)
     {
         Edges.Add(new Edge(weight,v1,v2));
     }
+    
 
+    public void WriteMatrix()
+    {
+        for (int i = 0; i < Matrix.Count; i++)
+        {
+            for (int j = 0; j < Matrix[i].Count; j++)
+            {
+                Console.Write("{0}\t",Matrix[i][j]);
+            }
+            Console.WriteLine();
+        }  
+    }
+    
     public void WriteVertexs()
     {
         Console.WriteLine("Вершины в графе: ");

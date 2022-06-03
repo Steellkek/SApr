@@ -13,8 +13,10 @@ namespace SApr
             graph.CreateGraph();
             graph.WriteVertexs();
             graph.WriteEdges();
-            EvrAlg g = new EvrAlg();
+            graph.WriteMatrix();
+            FormFamOfSets g = new FormFamOfSets();
             g.GetSet(graph);
+            var s = lf.ReadSplit();
         }
     }
 }
