@@ -12,6 +12,7 @@ namespace SApr
             graph.Matrix = lf.ReadGraph();
             graph.CreateGraph();
             graph.WriteVertexs();
+            graph.WriteEdges();
             EvrAlg g = new EvrAlg();
             g.GetSet(graph);
         }

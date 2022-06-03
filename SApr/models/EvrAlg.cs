@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace SApr.models;
 
 public class EvrAlg
@@ -10,23 +12,25 @@ public class EvrAlg
             .OrderBy(x => x.Degre)
             .ToList();
         List<IEnumerable<Vertex>> t = new List<IEnumerable<Vertex>>();
-
-        while (true)
+        var l = true;
+        while (l)
         {
             var indSet = new IndSetVert();
-
-            for (int i = 0; i < VertSort.Count; i++)
+            for (int i = VertSort.Count-1; i >= 0; i--)
             {
                 var x = VertSort[i].AdjVert.Intersect(indSet.SetVert).ToList();
-                foreach (var VARIABLE in x)
+                if (x.Count==0)
                 {
-                    Console.WriteLine(VARIABLE.Number);
+                    indSet.SetVert.Add(VertSort[i]);
+                    VertSort.Remove(VertSort[i]);
+                    Console.WriteLine(0);
                 }
-                indSet.SetVert.Add(VertSort[i]);
-                VertSort.Remove(VertSort[i]);
-                t.Add(x);
             }
-
+            FamOfSets.Add(indSet);
+            if (VertSort.Count==0)
+            {
+                l = false;
+            }
         }
     }
 }

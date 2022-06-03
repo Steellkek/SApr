@@ -28,10 +28,10 @@ public class Graph
     public void WriteEdges()
     {
         Console.Write("Вершины в графе: ");
-        foreach (var vertex in Vertexs)
+        foreach (var edge in Edges)
         {
             
-            Console.WriteLine(vertex.Number+" ");
+            Console.WriteLine(edge.V1.Number+" "+edge.V2.Number+" "+edge.Weight);
         }
     }
 

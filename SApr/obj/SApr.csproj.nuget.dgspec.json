@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\RiderProjects\\SApr\\SApr\\SApr.csproj": {}
+    "C:\\Users\\alyam\\RiderProjects\\SApr\\SApr\\SApr.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\RiderProjects\\SApr\\SApr\\SApr.csproj": {
+    "C:\\Users\\alyam\\RiderProjects\\SApr\\SApr\\SApr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\RiderProjects\\SApr\\SApr\\SApr.csproj",
+        "projectUniqueName": "C:\\Users\\alyam\\RiderProjects\\SApr\\SApr\\SApr.csproj",
         "projectName": "SApr",
-        "projectPath": "C:\\Users\\User\\RiderProjects\\SApr\\SApr\\SApr.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\RiderProjects\\SApr\\SApr\\obj\\",
+        "projectPath": "C:\\Users\\alyam\\RiderProjects\\SApr\\SApr\\SApr.csproj",
+        "packagesPath": "C:\\Users\\alyam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alyam\\RiderProjects\\SApr\\SApr\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\alyam\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
