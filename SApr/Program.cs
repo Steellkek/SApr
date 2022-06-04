@@ -17,6 +17,8 @@ namespace SApr
             FormFamOfSets g = new FormFamOfSets();
             g.GetSet(graph);
             var s = lf.ReadSplit();
+            /*BuildRanMatrix s = new BuildRanMatrix();
+            s.WriteMatix();*/
         }
     }
 }

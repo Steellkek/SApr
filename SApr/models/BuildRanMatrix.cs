@@ -11,7 +11,7 @@ public class BuildRanMatrix
             matrix[i, i] = 0;
             for (int j = i + 1; j < N; j++)
             {
-                matrix[i, j] = ran.Next(0, 20);
+                matrix[i, j] = ran.Next(0, 10);
                 matrix[j, i] = matrix[i, j]; // обратный порядок индексов
             }
         }
@@ -22,7 +22,7 @@ public class BuildRanMatrix
     {
         using (StreamWriter stream = new StreamWriter("matrix.txt"))
         {
-            int n = 200;
+            int n = 5;
             var x = BuildMatrix(n);
             for (int i = 0; i < n; i++)
             {

@@ -10,9 +10,23 @@ public class EvrAlg
         Split = new LocalFile().ReadSplit();
     }
 
-    public Void GetStartSplit(FormFamOfSets sets)
+    public void GetStartSplit(FormFamOfSets sets)
     {
-        foreach (var VARIABLE in sets.FamOfSets)
+        List<Vertex[]> x = new List<Vertex[]>();
+        foreach (var split in Split)
+        {
+            Vertex[] y = new Vertex[split];
+            x.Add(y);
+        }
+
+        for (int i = sets.FamOfSets[0].Count-1; i >=0 ; i--)
+        {
+            foreach (var VARIABLE in x)
+            {
+                
+            }
+        }
+        foreach (var set in sets.FamOfSets)
         {
             
         }
