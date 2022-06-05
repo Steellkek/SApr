@@ -86,7 +86,7 @@ public class Population
         }
 
         (population[index].Gen[p1], population[index].Gen[p2]) = (population[index].Gen[p2], population[index].Gen[p1]);
-        Console.WriteLine(5);
+        population[index].DetermineFitnes(_graph);
     }
 
     public void Inversion(int index)
