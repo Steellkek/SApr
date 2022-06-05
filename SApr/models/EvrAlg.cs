@@ -19,16 +19,34 @@ public class EvrAlg
             x.Add(y);
         }
 
-        for (int i = sets.FamOfSets[0].Count-1; i >=0 ; i--)
+
+        
+        foreach (var set in sets.FamOfSets.OrderBy(set=>set.Count))
         {
-            foreach (var VARIABLE in x)
+            foreach (var v in set)
             {
-                
+                for (int i = 0; i < x.Count; i++)
+                {
+
+                    var flag = false;
+                    if (x[i].Last() == null)
+                    {
+                        for (int j = 0; j < x[i].Length; j++)
+                        {
+                            x[i][Array.IndexOf(x[i], null)] = v;
+                            set.Remove(v);
+                            flag = true;
+                            break;
+                        }
+                    }
+
+                    if (flag)
+                    {
+                        break;
+                    }
+                }
             }
         }
-        foreach (var set in sets.FamOfSets)
-        {
-            
-        }
+        Console.WriteLine(x);
     }
 }

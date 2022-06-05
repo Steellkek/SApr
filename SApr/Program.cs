@@ -14,11 +14,10 @@ namespace SApr
             graph.WriteVertexs();
             graph.WriteEdges();
             graph.WriteMatrix();
-            FormFamOfSets g = new FormFamOfSets();
-            g.GetSet(graph);
-            var s = lf.ReadSplit();
-            /*BuildRanMatrix s = new BuildRanMatrix();
-            s.WriteMatix();*/
+            Population pop = new Population(graph);
+            pop.CreateStartedPopulation(graph,4);
+            pop.CreateNewParents();
+            Console.WriteLine(6);
         }
     }
 }

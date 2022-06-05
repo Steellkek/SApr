@@ -5,6 +5,7 @@ public class Graph
     public List<List<int>> Matrix { get; set; }
     public List<Edge> Edges = new();
     public List<Vertex> Vertexs=new();
+    public int SumDegVert = 0;
 
     public void AddVertex(int number)
     {
@@ -84,10 +85,11 @@ public class Graph
         {
             AddVertDegree(vertex);
         }
-
+        
         foreach (var edge in Edges)
         {
             AddAdjVert(edge);
+            SumDegVert += edge.Weight;
         }
         
     }
