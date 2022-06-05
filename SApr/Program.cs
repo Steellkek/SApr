@@ -17,6 +17,7 @@ namespace SApr
             Population pop = new Population(graph);
             pop.CreateStartedPopulation(graph,4);
             pop.CreateNewParents();
+            pop.Inversion(0);
             Console.WriteLine(6);
         }
     }

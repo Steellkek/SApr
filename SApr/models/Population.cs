@@ -73,7 +73,6 @@ public class Population
         child2.GetChild(child2,population[index1],j,_graph);
         population[index1] = child1;
         population[index2] = child2;
-        Console.WriteLine(5);
     }
 
     public void Mutation(int index)
@@ -87,6 +86,24 @@ public class Population
         }
 
         (population[index].Gen[p1], population[index].Gen[p2]) = (population[index].Gen[p2], population[index].Gen[p1]);
+        Console.WriteLine(5);
+    }
+
+    public void Inversion(int index)
+    {
+        Console.WriteLine(5);
+        Random ran = new();
+        int side = ran.Next(0, 2);
+        var point = ran.Next(population[index].Gen.Count);
+        if (side==0)
+        {
+            population[index].Gen.Reverse(0,point+1);
+        }
+        if (side==1)
+        {
+            population[index].Gen.Reverse(point, population[index].Gen.Count-point);
+        }
+        population[index].DetermineFitnes(_graph);
         Console.WriteLine(5);
     }
 }
