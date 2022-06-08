@@ -11,14 +11,10 @@ namespace SApr
             Graph graph = new Graph();
             graph.Matrix = lf.ReadGraph();
             graph.CreateGraph();
-            graph.WriteVertexs();
-            graph.WriteEdges();
-            graph.WriteMatrix();
-            Population pop = new Population(graph);
-            pop.CreateStartedPopulation(graph,4);
-            pop.CreateNewParents();
-            pop.Inversion(0);
-            Console.WriteLine(6);
+            GenAlg v = new GenAlg(20, 1000, 0.95, 0.1, 0.1, graph);
+            //Console.WriteLine(5);
+            v.Go();
+            Console.WriteLine(v.BestGen.Fitness);
         }
     }
 }

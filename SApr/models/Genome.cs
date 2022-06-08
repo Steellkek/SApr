@@ -36,6 +36,7 @@ public class Genome
 
     public void DetermineFitnes(Graph g)
     {
+        Fitness = 0;
 
         int l = 0;
         foreach (var x in Split)
@@ -55,7 +56,7 @@ public class Genome
             }
 
             l += x;
-            Console.WriteLine(5);
+            //Console.WriteLine(5);
         }
 
         Fitness = Fitness / 2;

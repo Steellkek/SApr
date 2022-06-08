@@ -46,11 +46,7 @@ public class LocalFile
                 .Select(x => int.Parse(x))
                 .ToList();
         }
-
-        foreach (var VARIABLE in split)
-        {
-            Console.WriteLine(VARIABLE);
-        }
+        
         return split;
     }
 }
