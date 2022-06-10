@@ -4,7 +4,7 @@ public class Population
 {
     public List<Genome> population = new();
     public List<Genome> Parents;
-    private double SumFitness;
+    public double SumFitness;
     private Graph _graph;
 
     public Population(Graph graph)
@@ -63,21 +63,26 @@ public class Population
     
     public void Crossover(int index1,int index2)
     {
-        var rand = new Random();
-        Genome child1 = new Genome();
-        Genome child2 = new Genome();
-        var j = rand.Next(2,Parents[index1].Gen.Count-2);
-        child1.Gen = Parents[index1].Gen.GetRange(0, j);
-        child2.Gen = Parents[index2].Gen.GetRange(0, j);
-        child1.GetChild(child1,Parents[index2],j,_graph);
-        child2.GetChild(child2,Parents[index1],j,_graph);
-        //Console.WriteLine(5);
-        population[index1].Gen = child1.Gen.GetRange(0,child1.Gen.Count);
-        population[index2].Gen = child2.Gen.GetRange(0,child2.Gen.Count);
-        //Console.WriteLine(5);
+        if (Parents[index1]!=Parents[index2])
+        {
+            var rand = new Random();
+            Genome child1 = new Genome();
+            Genome child2 = new Genome();
+            var j = rand.Next(2,Parents[index1].Gen.Count-2);
+            child1.Gen = Parents[index1].Gen.GetRange(0, j);
+            child2.Gen = Parents[index2].Gen.GetRange(0, j);
+            child1.GetChild(child1,Parents[index2],j,_graph);
+            child2.GetChild(child2,Parents[index1],j,_graph);
+            population[index1].Gen = child1.Gen.GetRange(0,child1.Gen.Count);
+            population[index2].Gen = child2.Gen.GetRange(0,child2.Gen.Count);
+        }
+        else
+        {
+            population[index1].Gen = Parents[index1].Gen.GetRange(0, Parents[index1].Gen.Count);
+            population[index2].Gen = Parents[index2].Gen.GetRange(0, Parents[index2].Gen.Count);
+        }
         population[index1].DetermineFitnes(_graph);
         population[index2].DetermineFitnes(_graph);
-        //Console.WriteLine(5);
 
 
     }

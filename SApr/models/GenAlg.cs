@@ -30,6 +30,8 @@ public class GenAlg
         Random ran = new();
         _population = new Population(_graph);
         _population.CreateStartedPopulation(CountPopulation);
+        double BestSumFitnes = 0;
+        var x = 0;
         //Console.WriteLine(5);
         for (int i = 0; i < Iteration; i++)
         {
@@ -51,7 +53,21 @@ public class GenAlg
             _population.CalculateAverFitness();
             GetBestGen();
             //Console.WriteLine(5);
+            if (_population.SumFitness>BestSumFitnes)
+            {
+                BestSumFitnes = _population.SumFitness;
+                x = 0;
+            }
+            else
+            {
+                x += 1;
+            }
 
+            if (x==CountPopulation/20)
+            {
+                break;
+            }
+            //Console.WriteLine(5);
         }
         stopwatch.Stop();
         Console.WriteLine(stopwatch.ElapsedMilliseconds);
@@ -96,7 +112,8 @@ public class GenAlg
 
         if (_population.population.Count%2==1)
         {
-             _population.population[_population.population.Count-1] = _population.Parents[_population.population.Count-1];
+             _population.population[_population.population.Count-1].Gen = _population.Parents[_population.population.Count-1].Gen.GetRange(0,_population.population[_population.population.Count-1].Gen.Count);
+             _population.population[_population.population.Count-1].DetermineFitnes(_graph);
         }
         
 

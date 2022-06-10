@@ -11,8 +11,7 @@ namespace SApr
             Graph graph = new Graph();
             graph.Matrix = lf.ReadGraph();
             graph.CreateGraph();
-            GenAlg v = new GenAlg(20, 1000, 0.95, 0.1, 0.1, graph);
-            //Console.WriteLine(5);
+            GenAlg v = new GenAlg(100, 40, 0.95, 0.1, 0.1, graph);
             v.Go();
             Console.WriteLine(v.BestGen.Fitness);
         }

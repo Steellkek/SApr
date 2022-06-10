@@ -22,7 +22,7 @@ public class BuildRanMatrix
     {
         using (StreamWriter stream = new StreamWriter("matrix.txt"))
         {
-            int n = 5;
+            int n = 20;
             var x = BuildMatrix(n);
             for (int i = 0; i < n; i++)
             {
